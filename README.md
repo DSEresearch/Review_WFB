@@ -121,12 +121,12 @@ The selected real-time WFB runs reach their best validation ADE at epochs 58, 85
 The evaluated wave layer applies a learned projection to each observed position, then forms a wave activation. Schematically, with elementwise operations,
 
 $$
-s_i=\tanh\!\left(\operatorname{LN}(W x_i+b)\right),\qquad
+s_i=\tanh\!\left(\mathrm{LN}(W x_i+b)\right),\qquad
 h_i=A\odot\cos\!\left(k\odot s_i-\omega\,\overline{\Delta t}_i-\theta\right),
 $$
 
 $$
-\widehat{Y}=g\!\left(\operatorname{concat}(h_1,\ldots,h_8)\right).
+\widehat{Y}=g\!\left(\mathrm{concat}(h_1,\ldots,h_8)\right).
 $$
 
 Here the effective amplitude is the product of the implementation's spatial and temporal amplitudes, and the phase combines its two phase parameters. The bar on dt denotes the training-normalized interval used by the WFB layer. Standard WFB optimizes these parameters through the ordinary chain rule; the optional Laplacian variants alter selected wave-parameter updates.
@@ -153,8 +153,8 @@ A minimal carried-state formulation is
 
 $$
 z_i=P_i z_{i-1}+u_i,\qquad
-P_i=\operatorname{diag}\!\left[
-e^{-\gamma\Delta t_i}\,
+P_i=\mathrm{diag}\left[
+e^{-\gamma\Delta t_i}\odot
 e^{\mathrm{i}(\kappa\Delta p_i-\omega\Delta t_i)}
 \right],\qquad \gamma\geq 0.
 $$
@@ -203,9 +203,6 @@ If gradient-rule novelty remains a WFB claim, it still requires a separate fixed
 
 These issues do not invalidate the internally shared comparison, but they limit physical-time interpretation and generalization claims. Correcting the timing provenance and adding source-disjoint evaluation are important before attributing an improvement to a physical propagation mechanism.
 
-## 8. Suggested WSP Motivation Paragraph
-
-> Our controlled evaluation of Wave Function Backpropagation separates the benefit of an interval-conditioned wave representation from the broader problem of temporal state evolution. Although WFB improves over a small feed-forward baseline and several Fourier/time-encoding controls, its advantage is not maintained against parameter-matched feed-forward alternatives, and correctly aligned intervals do not outperform shuffled intervals. The evaluated formulation modulates each observation's wave activation without explicitly propagating a hidden wave state between observations. Stronger sequence-model results motivate investigating such propagation, while the performance of a feed-forward SIREN control cautions against attributing the entire gap to memory. We therefore investigate Wave State Propagation, which extends WFB by allowing elapsed time to rotate and attenuate a carried hidden state while successive observations inject new information. This extension provides a structured hypothesis for learning event-specific physical-time dynamics; its accuracy, generalization, and computational benefits require independent controlled evaluation.
 
 ## Sources and Reproducibility
 
