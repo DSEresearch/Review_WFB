@@ -1,6 +1,6 @@
 # WFB Evaluation and the Motivation for WSP
 
-**Analysis date: September 20, 2026.** This report describes the completed position-only WFB reviewer experiments in this directory. WSP is discussed as a research motivation, not as an evaluated model in these results. No original experiment files or manuscript text were changed to produce this report.
+WSP is discussed as a research motivation, not as an evaluated model in these results. No original experiment files or manuscript text were changed to produce this report.
 
 ## Executive Summary
 
@@ -203,12 +203,4 @@ If gradient-rule novelty remains a WFB claim, it still requires a separate fixed
 
 These issues do not invalidate the internally shared comparison, but they limit physical-time interpretation and generalization claims. Correcting the timing provenance and adding source-disjoint evaluation are important before attributing an improvement to a physical propagation mechanism.
 
-
-## Sources and Reproducibility
-
-- [Full performance metrics](C:/Users/junwh/Documents/Codex/2026-06-15/outputs/review_outputs/wfb_review_main/summary/performance.csv), including FDE, MSE, RMSE, latency, and throughput.
-- [Selected per-seed results](C:/Users/junwh/Documents/Codex/2026-06-15/outputs/review_outputs/wfb_review_main/summary/all_seed_results.csv) and [paired statistics](C:/Users/junwh/Documents/Codex/2026-06-15/outputs/review_outputs/wfb_review_main/summary/paired_ADE.csv).
-- [Timing and split audit](C:/Users/junwh/Documents/Codex/2026-06-15/outputs/review_outputs/wfb_review_cache_timestamps/data_audit.json) and [suite completion status](C:/Users/junwh/Documents/Codex/2026-06-15/outputs/review_outputs/wfb_review_main/suite_status.json).
-- [WFB implementation](C:/Users/junwh/Documents/Codex/2026-06-15/project-title-wfb-based-trajectory-prediction/src/models.py), [wave-state implementation](C:/Users/junwh/Documents/Codex/2026-06-15/project-title-wfb-based-trajectory-prediction/src/sequence_models.py), and [WSP mathematical draft](C:/Users/junwh/Documents/Codex/2026-06-15/project-title-wfb-based-trajectory-prediction/mathematical_model_wsp_transformer.tex).
-- [Figure regeneration script](C:/Users/junwh/Documents/Codex/2026-06-15/outputs/review_outputs/analysis_figures/build_figures.py). Run this file with Python containing NumPy, pandas, and Matplotlib. It validates the 75 selected runs and writes five PNG/PDF pairs in its own directory without modifying experiment outputs. Image links use absolute local paths for preview in this workspace.
-
+[Wave Function Backpropagation with Explicit Temporal-Interval Dynamics](https://arxiv.org/pdf/2609.00503) The 38th IEEE International Conference on Tools with Artificial Intelligence, Nov. 2026
